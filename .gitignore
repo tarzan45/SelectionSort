@@ -1,0 +1,46 @@
+C# kodu:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SelectionSort
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] sayilar = new int[5] {5,43,53,36,12};
+            foreach (var a in sayilar)
+            {
+                Console.Write(a+ " ");
+            }
+            Console.WriteLine();
+            int index;
+            for (int i=0; i<sayilar.Length; i++)
+            {
+                index = i;
+                for (int j=i; j<sayilar.Length; j++)
+                {
+                    if (sayilar[index] > sayilar[j])
+                    {
+                        index = j;
+                    }
+                }
+
+                int temp;
+                temp = sayilar[i];
+                sayilar[i] = sayilar[index];
+                sayilar[index] = temp;
+            }
+
+            foreach (var item in sayilar)
+            {
+                Console.Write(item + " ");
+            }
+            Console.ReadLine();
+        }
+    }
+}
